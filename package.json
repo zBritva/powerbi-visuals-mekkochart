@@ -54,7 +54,7 @@
     "lodash.minby": "4.6.0",
     "lodash.sortby": "4.7.0",
     "powerbi-models": "1.0.3",
-    "powerbi-visuals-api": "^2.1.0",
+    "powerbi-visuals-api": "^1.13.0",
     "powerbi-visuals-tools": "3.0.6",
     "powerbi-visuals-utils-chartutils": "^2.2.0",
     "powerbi-visuals-utils-colorutils": "2.0.2",

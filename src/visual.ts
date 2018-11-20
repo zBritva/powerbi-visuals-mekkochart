@@ -44,6 +44,8 @@ import SortDirection = powerbi.SortDirection;
 import IVisual = powerbi.extensibility.visual.IVisual;
 import VisualObjectInstanceEnumeration = powerbi.VisualObjectInstanceEnumeration;
 
+import "../style/visual.less";
+
 import {
     MekkoColumnChartData,
     MekkoChartVisualInitOptions,
