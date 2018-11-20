@@ -77,7 +77,7 @@ import { IVisualStrategy } from "./visualStrategy";
 
 import * as columnChart from "./../columnChart/baseColumnChart";
 
-import MekkoChart from "./../visual";
+import { MekkoChart }  from "./../visual";
 
 import { valueType, pixelConverter as PixelConverter } from "powerbi-visuals-utils-typeutils";
 
@@ -563,7 +563,7 @@ export class BaseVisualStrategy implements IVisualStrategy {
                     ? " highlight"
                     : "");
             })
-            .merge(shapeSelection)
+            .merge(shapes)
             .style(
                 "fill", (dataPoint: MekkoChartColumnDataPoint) => data.showAllDataPoints
                     ? dataPoint.color
@@ -581,7 +581,7 @@ export class BaseVisualStrategy implements IVisualStrategy {
             .attr("x", layout.shapeLayout.x)
             .attr("y", layout.shapeLayout.y);
 
-        shapes
+        allShapes
             .exit()
             .remove();
 

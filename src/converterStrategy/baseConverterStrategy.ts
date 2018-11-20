@@ -46,7 +46,7 @@ import DataViewValueColumn = powerbi.DataViewValueColumn;
 import DataViewCategoryColumn = powerbi.DataViewCategoryColumn;
 import DataViewValueColumns = powerbi.DataViewValueColumns;
 
-import MekkoChart from "./../visual";
+import { MekkoChart } from "./../visual";
 import {
     MekkoLegendDataPoint,
     ICategotyValuesStatsCollection,

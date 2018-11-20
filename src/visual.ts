@@ -206,7 +206,7 @@ export interface MekkoChartSettings {
 /**
  * Renders a data series as a cartesian visual.
  */
-export default class MekkoChart implements IVisual {
+export class MekkoChart implements IVisual {
     private static XAxisYPositionOffset: number = 33;
     private static WidthDelimiter: number = 2;
     private static XDelimiter: number = 2;
@@ -918,7 +918,7 @@ export default class MekkoChart implements IVisual {
         };
     }
 
-    /** 
+    /**
      * Returns the thickness for each category.
      * For clustered charts, you still need to divide by
      * the number of series to get column width after calling this method.
@@ -2286,7 +2286,7 @@ export default class MekkoChart implements IVisual {
                     .attr("dy", MekkoChart.DefaultLabelDy)
                     .attr("transform", `rotate(-${MekkoChart.CategoryTextRotataionDegree})`);
 
-                // fix positions 
+                // fix positions
                 let categoryLabels = xAxisGraphicsElement.selectAll(".tick");
                 categoryLabels.each(function (tick, index) {
                     let shiftX: number = (<any>this).getBBox().width / Math.tan(MekkoChart.CategoryTextRotataionDegree * Math.PI / 180) / 2.0;

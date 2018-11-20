@@ -119,7 +119,7 @@ import { select, Selection} from "d3-selection";
 
 import sortBy from "lodash.sortby";
 
-import MekkoChart from "./../visual";
+import { MekkoChart } from "./../visual";
 
 import * as  formattingUtils from "./../formattingUtils";
 import * as converterStrategy from "./../converterStrategy/baseConverterStrategy";
