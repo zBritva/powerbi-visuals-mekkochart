@@ -51,7 +51,7 @@ import {
     dataLabelUtils,
     dataLabelInterfaces
 }
-    from "powerbi-visuals-utils-chartutils";
+from "powerbi-visuals-utils-chartutils";
 
 import {
     prototype as Prototype,
@@ -147,7 +147,7 @@ import DataViewCategorical = powerbi.DataViewCategorical;
 import DataViewMetadataColumn = powerbi.DataViewMetadataColumn;
 import DataViewMetadata = powerbi.DataViewMetadata;
 import DataViewCategoryColumn = powerbi.DataViewCategoryColumn;
-import DataViewScopeIdentity = powerbi.DataViewScopeIdentity;
+// import DataViewScopeIdentity = powerbi.DataViewScopeIdentity;
 import PrimitiveValue = powerbi.PrimitiveValue;
 import DataViewValueColumn = powerbi.DataViewValueColumn;
 import VisualObjectInstance = powerbi.VisualObjectInstance;
@@ -171,7 +171,7 @@ import EnumExtensions = enumExtensions.EnumExtensions;
 import ArrayExtensions = arrayExtensions.ArrayExtensions;
 
 // powerbi.extensibility.utils.interactivity
-import LegendIcon = legendInterfaces.LegendIcon;
+import LegendIcon = legendInterfaces.MarkerShape;
 import ILegendData = legendInterfaces.LegendData;
 import LegendDataPoint = legendInterfaces.LegendDataPoint;
 import DataLabelObject = dataLabelInterfaces.DataLabelObject;
@@ -365,7 +365,7 @@ export class BaseColumnChart implements IColumnChart {
             categories: PrimitiveValue[] = firstCategory
                 ? firstCategory.values
                 : [],
-            categoryIdentities: DataViewScopeIdentity[] = firstCategory
+            categoryIdentities: any[] = firstCategory // DataViewScopeIdentity
                 ? firstCategory.identity
                 : [],
             categoryMetadata: DataViewMetadataColumn = firstCategory
@@ -625,7 +625,7 @@ export class BaseColumnChart implements IColumnChart {
         visualHost: IVisualHost,
         dataViewCat: DataViewCategorical,
         categories: any[],
-        categoryIdentities: DataViewScopeIdentity[],
+        categoryIdentities: any[], // DataViewScopeIdentity
         legend: MekkoLegendDataPoint[],
         seriesObjectsList: powerbi.DataViewObjects[][],
         converterStrategy: BaseConverterStrategy,
@@ -1712,7 +1712,7 @@ export class BaseColumnChart implements IColumnChart {
 
             legendDataPoints.push({
                 color: dataPointColor,
-                icon: LegendIcon.Box,
+                markerShape: LegendIcon.circle,
                 label: formattedLabel,
                 category: data.categoryFormatter
                     ? data.categoryFormatter.format(category)

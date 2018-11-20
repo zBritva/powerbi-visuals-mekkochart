@@ -32,7 +32,7 @@ import IViewport = powerbi.IViewport;
 import IVisualHost = powerbi.extensibility.visual.IVisualHost;
 import IColorPalette = powerbi.extensibility.IColorPalette;
 import DataViewMetadataColumn = powerbi.DataViewMetadataColumn;
-import DataViewScopeIdentity = powerbi.DataViewScopeIdentity;
+// import DataViewScopeIdentity = powerbi.DataViewScopeIdentity;
 import VisualConstructorOptions = powerbi.extensibility.visual.VisualConstructorOptions;
 import DataViewObjectPropertyIdentifier = powerbi.DataViewObjectPropertyIdentifier;
 import DataViewValueColumnGroup = powerbi.DataViewValueColumnGroup;
@@ -505,7 +505,7 @@ export interface MekkoChartDrawInfo {
 }
 
 export interface BaseColorIdentity {
-    identity: DataViewScopeIdentity;
+    identity: any; // DataViewScopeIdentity;
     category: string;
     color: string;
     group: DataViewValueColumnGroup;
@@ -530,7 +530,7 @@ export interface IFilteredValueGroups {
     categoryValue: PrimitiveValue;
     categoryIndex: number;
     category: PrimitiveValue;
-    identity: DataViewScopeIdentity;
+    identity: any; // DataViewScopeIdentity;
 }
 
 export class ICategoryValuesCollection extends Array<MekkoChartColumnDataPoint> {
